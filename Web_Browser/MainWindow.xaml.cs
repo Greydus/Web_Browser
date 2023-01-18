@@ -44,5 +44,10 @@ namespace Web_Browser
         {
             webBrowser.GoForward();
         }
+
+        private void webBrowser_OnNavigating(object sender, NavigatingCancelEventArgs e)
+        {
+            uriAddrBox.Text = e.Uri.AbsoluteUri;
+        }
     }
 }
