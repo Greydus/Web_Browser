@@ -49,5 +49,10 @@ namespace Web_Browser
         {
             uriAddrBox.Text = e.Uri.AbsoluteUri;
         }
+
+        private void mainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            webBrowser.Navigate(uriAddrBox.Text);
+        }
     }
 }
