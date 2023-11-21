@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Browser"
-        mc:Ignorable="d"
-        Title="Web Browser" Height="600" Width="1024" Loaded="OnLoaded" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        mc:Ignorable="d" Height="600" Width="1024" Loaded="OnLoaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" Title="Web Browser">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,7 +18,7 @@
         <TextBox x:Name="UrlAddress" Margin="60,12,384,0" VerticalAlignment="Top" Height="20" MaxLines="1"/>
         <Button x:Name="GoButton" Content="Go" Margin="903,12,102,0" VerticalAlignment="Top" Click="GoButtonOnClick" HorizontalAlignment="Right"/>
         <Button x:Name="RefreshButton" Content="Refresh" Margin="0,12,10,0" VerticalAlignment="Top" Click="RefreshButtonOnClick" Height="20" HorizontalAlignment="Right"/>
-        <WebBrowser x:Name="WebBrowser" Navigating="WebBrowserOnNavigating" Grid.Row="1"/>
+        <WebBrowser x:Name="WebBrowser" Grid.Row="1" Navigated="WebBrowserOnNavigated"/>
         <TextBox x:Name="SearchQuery" Margin="645,12,127,0" MaxLines="1" Height="20" Width="252" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <Button x:Name="SearchButton" Content="Search" Margin="0,12,58,0" VerticalAlignment="Top" Height="20" Click="SearchButtonOnClick" HorizontalAlignment="Right"/>
     </Grid>

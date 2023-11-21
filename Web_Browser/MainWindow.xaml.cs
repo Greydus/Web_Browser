@@ -52,8 +52,10 @@ namespace Web_Browser
             WebBrowser.GoForward();
         }
 
-        private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
+        private void WebBrowserOnNavigated(object sender, NavigationEventArgs e)
         {
+            BackButton.IsEnabled = WebBrowser.CanGoBack;
+            ForwardButton.IsEnabled = WebBrowser.CanGoForward;
             UrlAddress.Text = e.Uri.AbsoluteUri;
         }
 
