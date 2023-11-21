@@ -1,12 +1,12 @@
-﻿<Window x:Name="mainWindow" x:Class="Web_Browser.MainWindow"
+﻿<Window x:Class="Web_Browser.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Browser"
         mc:Ignorable="d"
-        Title="Web Browser" Height="600" Width="1024" Loaded="mainWindow_OnLoaded" WindowState="Maximized" WindowStartupLocation="CenterScreen">
-    <Grid HorizontalAlignment="Left">
+        Title="Web Browser" Height="600" Width="1024" Loaded="OnLoaded" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -14,13 +14,13 @@
             <RowDefinition/>
             <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="bckBtn" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Click="bckBtn_OnClick" Height="20" Width="20"/>
-        <Button x:Name="fwdBtn" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Click="fwdBtn_OnClick" Height="20" Width="20"/>
-        <TextBox x:Name="uriAddrBox" Margin="60,0,384,0" Text="https://www.google.com/" VerticalAlignment="Center" Height="20" MaxLines="1"/>
-        <Button x:Name="goBtn" Content="Go" Margin="902,0,102,0" VerticalAlignment="Center" Click="goBtn_OnClick" Height="20" HorizontalAlignment="Right"/>
-        <Button x:Name="refreshBtn" Content="Refresh" Margin="969,0,10,0" VerticalAlignment="Center" Click="refreshBtn_OnClick" Height="20" HorizontalAlignment="Right"/>
-        <WebBrowser x:Name="webBrowser" Grid.Row="1" Navigating="webBrowser_OnNavigating" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="searchBox" Margin="0,0,127,0" Text="TextBox" VerticalAlignment="Center" MaxLines="1" Height="20" HorizontalAlignment="Right" Width="252"/>
-        <Button x:Name="searchBtn" Content="Search" Margin="927,0,58,0" VerticalAlignment="Center" Height="20" HorizontalAlignment="Right"/>
+        <Button x:Name="BackButton" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Click="BackButtonOnClick" Height="20" Width="20"/>
+        <Button x:Name="ForwardButton" Content="&gt;&gt;" Margin="35,12,0,0" VerticalAlignment="Top" Click="ForwardButtonOnClick" Height="20" Width="20" HorizontalAlignment="Left"/>
+        <TextBox x:Name="UrlAddress" Margin="60,12,384,0" VerticalAlignment="Top" Height="20" MaxLines="1"/>
+        <Button x:Name="GoButton" Content="Go" Margin="903,12,102,0" VerticalAlignment="Top" Click="GoButtonOnClick" HorizontalAlignment="Right"/>
+        <Button x:Name="RefreshButton" Content="Refresh" Margin="0,12,10,0" VerticalAlignment="Top" Click="RefreshButtonOnClick" Height="20" HorizontalAlignment="Right"/>
+        <WebBrowser x:Name="WebBrowser" Navigating="WebBrowserOnNavigating" Grid.Row="1"/>
+        <TextBox x:Name="SearchQuery" Margin="645,12,127,0" MaxLines="1" Height="20" Width="252" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Button x:Name="SearchButton" Content="Search" Margin="0,12,58,0" VerticalAlignment="Top" Height="20" Click="SearchButtonOnClick" HorizontalAlignment="Right"/>
     </Grid>
 </Window>

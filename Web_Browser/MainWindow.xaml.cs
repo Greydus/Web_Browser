@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,39 +21,50 @@ namespace Web_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly string HomePage;
+        readonly string SearchEngine;
+
         public MainWindow()
         {
+            HomePage = "https://wiby.me/";
+            SearchEngine = "https://wiby.me/?q=";
+
             InitializeComponent();
         }
 
-        private void goBtn_OnClick(object sender, RoutedEventArgs e)
+        private void GoButtonOnClick(object sender, RoutedEventArgs e)
         {
-            webBrowser.Navigate(uriAddrBox.Text);
+            WebBrowser.Navigate(UrlAddress.Text);
         }
 
-        private void refreshBtn_OnClick(object sender, RoutedEventArgs e)
+        private void RefreshButtonOnClick(object sender, RoutedEventArgs e)
         {
-            webBrowser.Refresh();
+            WebBrowser.Refresh();
         }
 
-        private void bckBtn_OnClick(object sender, RoutedEventArgs e)
+        private void BackButtonOnClick(object sender, RoutedEventArgs e)
         {
-            webBrowser.GoBack();
+            WebBrowser.GoBack();
         }
 
-        private void fwdBtn_OnClick(object sender, RoutedEventArgs e)
+        private void ForwardButtonOnClick(object sender, RoutedEventArgs e)
         {
-            webBrowser.GoForward();
+            WebBrowser.GoForward();
         }
 
-        private void webBrowser_OnNavigating(object sender, NavigatingCancelEventArgs e)
+        private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
         {
-            uriAddrBox.Text = e.Uri.AbsoluteUri;
+            UrlAddress.Text = e.Uri.AbsoluteUri;
         }
 
-        private void mainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            webBrowser.Navigate(uriAddrBox.Text);
+            WebBrowser.Navigate(HomePage);
+        }
+
+        private void SearchButtonOnClick(object sender, RoutedEventArgs e)
+        {
+            WebBrowser.Navigate(SearchEngine + HttpUtility.UrlEncode(SearchQuery.Text));
         }
     }
 }
