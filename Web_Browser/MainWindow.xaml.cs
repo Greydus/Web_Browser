@@ -21,14 +21,8 @@ namespace Web_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly string HomePage;
-        readonly string SearchEngine;
-
         public MainWindow()
         {
-            HomePage = "https://wiby.me/";
-            SearchEngine = "https://wiby.me/?q=";
-
             InitializeComponent();
         }
 
@@ -66,12 +60,12 @@ namespace Web_Browser
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(HomePage);
+            WebBrowser.Navigate(Properties.Settings.Default.HomePage);
         }
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(SearchEngine + HttpUtility.UrlEncode(SearchQuery.Text));
+            WebBrowser.Navigate(Properties.Settings.Default.SearchEngine + HttpUtility.UrlEncode(SearchQuery.Text));
         }
 
         private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
