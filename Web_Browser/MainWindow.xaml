@@ -13,13 +13,13 @@
             <RowDefinition/>
             <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="BackButton" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Click="BackButtonOnClick" Height="20" Width="20"/>
-        <Button x:Name="ForwardButton" Content="&gt;&gt;" Margin="35,12,0,0" VerticalAlignment="Top" Click="ForwardButtonOnClick" Height="20" Width="20" HorizontalAlignment="Left"/>
-        <TextBox x:Name="UrlAddress" Margin="60,12,384,0" VerticalAlignment="Top" Height="20" MaxLines="1"/>
-        <Button x:Name="GoButton" Content="Go" Margin="903,12,102,0" VerticalAlignment="Top" Click="GoButtonOnClick" HorizontalAlignment="Right"/>
-        <Button x:Name="RefreshButton" Content="Refresh" Margin="0,12,10,0" VerticalAlignment="Top" Click="RefreshButtonOnClick" Height="20" HorizontalAlignment="Right"/>
-        <WebBrowser x:Name="WebBrowser" Grid.Row="1" Navigated="WebBrowserOnNavigated"/>
-        <TextBox x:Name="SearchQuery" Margin="645,12,127,0" MaxLines="1" Height="20" Width="252" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-        <Button x:Name="SearchButton" Content="Search" Margin="0,12,58,0" VerticalAlignment="Top" Height="20" Click="SearchButtonOnClick" HorizontalAlignment="Right"/>
+        <Button x:Name="BackButton" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="10,10,0,0" Click="BackButtonOnClick" Width="30" Height="20" VerticalAlignment="Top"/>
+        <Button x:Name="ForwardButton" Content="&gt;&gt;" Margin="50,10,0,0" Click="ForwardButtonOnClick" HorizontalAlignment="Left" Width="30" Height="20" VerticalAlignment="Top"/>
+        <TextBox x:Name="UrlAddress" Margin="90,10,310,0" MaxLines="1" Height="20" VerticalAlignment="Top"/>
+        <Button x:Name="GoButton" Content="Go" Margin="0,10,130,0" Click="GoButtonOnClick" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30"/>
+        <Button x:Name="RefreshButton" Content="Refresh" Click="RefreshButtonOnClick" VerticalAlignment="Top" HorizontalAlignment="Right" Width="50" Margin="0,10,10,0" Height="20"/>
+        <WebBrowser x:Name="WebBrowser" Grid.Row="1" Navigated="WebBrowserOnNavigated" Navigating="WebBrowserOnNavigating"/>
+        <TextBox x:Name="SearchQuery" Margin="0,10,170,0" MaxLines="1" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="130"/>
+        <Button x:Name="SearchButton" Content="Search" Click="SearchButtonOnClick" VerticalAlignment="Top" HorizontalAlignment="Right" Width="50" Height="20" Margin="0,10,70,0"/>
     </Grid>
 </Window>

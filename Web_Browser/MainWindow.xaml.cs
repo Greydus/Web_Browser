@@ -56,7 +56,12 @@ namespace Web_Browser
         {
             BackButton.IsEnabled = WebBrowser.CanGoBack;
             ForwardButton.IsEnabled = WebBrowser.CanGoForward;
+            UrlAddress.IsEnabled = true;
             UrlAddress.Text = e.Uri.AbsoluteUri;
+            SearchQuery.IsEnabled = true;
+            GoButton.IsEnabled = true;
+            SearchButton.IsEnabled = true;
+            RefreshButton.IsEnabled = true;
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
@@ -67,6 +72,17 @@ namespace Web_Browser
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
             WebBrowser.Navigate(SearchEngine + HttpUtility.UrlEncode(SearchQuery.Text));
+        }
+
+        private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
+        {
+            BackButton.IsEnabled = false;
+            ForwardButton.IsEnabled = false;
+            UrlAddress.IsEnabled = false;
+            SearchQuery.IsEnabled = false;
+            GoButton.IsEnabled = false;
+            SearchButton.IsEnabled = false;
+            RefreshButton.IsEnabled = false;
         }
     }
 }
