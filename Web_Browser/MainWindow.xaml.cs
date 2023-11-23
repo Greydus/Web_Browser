@@ -21,8 +21,12 @@ namespace Web_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly SettingsWindow SettingsWindow;
+
         public MainWindow()
         {
+            SettingsWindow = new SettingsWindow();
+
             InitializeComponent();
         }
 
@@ -77,6 +81,11 @@ namespace Web_Browser
             GoButton.IsEnabled = false;
             SearchButton.IsEnabled = false;
             RefreshButton.IsEnabled = false;
+        }
+
+        private void SettingsButtonOnClick(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow.Show();
         }
     }
 }
