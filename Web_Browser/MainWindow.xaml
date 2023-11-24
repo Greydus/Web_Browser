@@ -16,7 +16,7 @@
         <StackPanel Grid.Row="1" CanHorizontallyScroll="True" Orientation="Horizontal">
             <Button x:Name="BackButton" Content="&lt;&lt;" Margin="6,0,0,0" Width="40" Height="20" Click="BackButtonOnClick"/>
             <Button x:Name="ForwardButton" Content="&gt;&gt;" Width="40" Margin="6,0,0,0" Height="20" Click="ForwardButtonOnClick"/>
-            <TextBox x:Name="UrlAddress" Margin="6,0,0,0" Height="20" AcceptsReturn="True"/>
+            <TextBox x:Name="UrlAddress" Margin="6,0,0,0" Height="20" AcceptsReturn="True" Width="560"/>
             <TextBox x:Name="SearchQuery" TextWrapping="Wrap" Margin="6,0,0,0" Height="20" Width="178"/>
             <Button x:Name="GoButton" Content="Go" Height="20" Margin="6,0,0,0" Width="40" Click="GoButtonOnClick"/>
             <Button x:Name="SearchButton" Content="Search" Height="20" Margin="6,0,0,0" Width="60" Click="SearchButtonOnClick"/>
