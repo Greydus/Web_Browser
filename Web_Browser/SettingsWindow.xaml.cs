@@ -30,7 +30,7 @@ namespace Web_Browser
             SearchEngine.Text = Properties.Settings.Default.SearchEngine;
         }
 
-        private void SaveButtonOnClick(object sender, RoutedEventArgs e)
+        private void SaveAndCloseButtonOnClick(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.HomePage = HomePage.Text;
             Properties.Settings.Default.SearchEngine = SearchEngine.Text;

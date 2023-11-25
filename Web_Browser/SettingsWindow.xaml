@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Browser"
         mc:Ignorable="d"
-        Title="Settings" Height="200" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Loaded="OnLoaded">
+        Title="Settings" Height="200" Width="200" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Loaded="OnLoaded">
     <Grid>
         <Label Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <Label Content="Search engine" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,70"/>
-        <TextBox x:Name="SearchEngine" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="20" Margin="10,0,10,40"/>
-        <Button x:Name="SaveButton" Content="Save &amp; Close" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="20" Width="90" Margin="0,0,10,10" Click="SaveButtonOnClick"/>
-        <TextBox x:Name="HomePage" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,40,10,0" Height="20"/>
+        <TextBox x:Name="SearchEngine" VerticalAlignment="Bottom" Height="20" Margin="10,0,10,40"/>
+        <Button x:Name="SaveAndCloseButton" Content="Save &amp; Close" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="20" Width="90" Margin="0,0,10,10" Click="SaveAndCloseButtonOnClick"/>
+        <TextBox x:Name="HomePage" VerticalAlignment="Top" Margin="10,40,10,0" Height="20"/>
 
     </Grid>
 </Window>

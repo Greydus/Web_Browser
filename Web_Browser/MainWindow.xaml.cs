@@ -85,7 +85,7 @@ namespace Web_Browser
 
         private void SettingsButtonOnClick(object sender, RoutedEventArgs e)
         {
-            SettingsWindow.Show();
+            SettingsWindow.ShowDialog();
         }
     }
 }
