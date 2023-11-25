@@ -23,6 +23,6 @@
         <WebBrowser x:Name="WebBrowser" Grid.Row="2" Navigated="WebBrowserOnNavigated" Navigating="WebBrowserOnNavigating" Grid.ColumnSpan="2"/>
         <TextBox x:Name="SearchQuery" MaxLines="1" VerticalAlignment="Center" Height="20" Grid.Column="1" Grid.Row="1" Margin="4,0,178,0"/>
         <Button x:Name="SearchButton" Content="Search" Click="SearchButtonOnClick" VerticalAlignment="Center" HorizontalAlignment="Right" Width="60" Height="20" Grid.Column="1" Grid.Row="1" Margin="0,0,70,0"/>
-        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="SettingsButtonOnClick"/>
+        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Height="20" Click="SettingsButtonOnClick" Margin="6,0,0,0"/>
     </Grid>
 </Window>
