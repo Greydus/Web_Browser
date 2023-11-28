@@ -13,14 +13,14 @@
         </Grid.RowDefinitions>
         <WebBrowser x:Name="WebBrowser" Grid.Row="2" Navigated="WebBrowserOnNavigated" Navigating="WebBrowserOnNavigating" Grid.ColumnSpan="2"/>
         <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Height="20" Click="SettingsButtonOnClick" Margin="6,0,0,0"/>
-        <DockPanel LastChildFill="False" Grid.Row="1">
-            <Button Content="&lt;&lt;" Width="40" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
-            <Button Content="&gt;&gt;" Width="40" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
-            <TextBox Width="520" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
-            <TextBox Width="216" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
-            <Button Content="Go" Width="40" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
-            <Button Content="Search" Width="60" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
-            <Button Content="Refresh" Width="60" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
+        <DockPanel Grid.Row="1">
+            <Button x:Name="BackButton" Content="&lt;&lt;" Width="40" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Margin="6,0,0,0" Click="BackButtonOnClick"/>
+            <Button x:Name="ForwardButton" Content="&gt;&gt;" Width="40" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Margin="6,0,0,0" Click="ForwardButtonOnClick"/>
+            <Button x:Name="RefreshButton" Content="Refresh" Width="60" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20" Margin="0,0,6,0" Click="RefreshButtonOnClick"/>
+            <Button x:Name="SearchButton" Content="Search" Width="60" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="6,0,6,0" Height="20" Click="SearchButtonOnClick"/>
+            <Button x:Name="GoButton" Content="Go" Width="40" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20" Margin="6,0,0,0" Click="GoButtonOnClick"/>
+            <TextBox x:Name="SearchTextBox" DockPanel.Dock="Right" VerticalAlignment="Center" Height="20" Width="200" HorizontalAlignment="Right" Margin="6,0,0,0"/>
+            <TextBox x:Name="UrlTextBox" VerticalAlignment="Center" Height="20" Margin="6,0,0,0"/>
         </DockPanel>
     </Grid>
 </Window>
