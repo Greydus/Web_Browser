@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,16 +27,16 @@ namespace Web_Browser
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            HomePage.Text = Properties.Settings.Default.HomePage;
-            SearchEngine.Text = Properties.Settings.Default.SearchEngine;
+            HomeTextBox.Text = Properties.Settings.Default.HomePage;
+            SearchTextBox.Text = Properties.Settings.Default.SearchEngine;
         }
 
-        private void SaveAndCloseButtonOnClick(object sender, RoutedEventArgs e)
+        private void SaveButtonOnClick(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.HomePage = HomePage.Text;
-            Properties.Settings.Default.SearchEngine = SearchEngine.Text;
+            Properties.Settings.Default.HomePage = HomeTextBox.Text;
+            Properties.Settings.Default.SearchEngine = SearchTextBox.Text;
             Properties.Settings.Default.Save();
-            Close();
+            Hide();
         }
     }
 }

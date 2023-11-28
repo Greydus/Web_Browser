@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Browser"
         mc:Ignorable="d"
-        Title="Settings" Height="200" Width="200" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Loaded="OnLoaded">
+        Title="Settings" Height="164" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="OnLoaded" ShowInTaskbar="False">
     <Grid>
-        <Label Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <Label Content="Search engine" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,70"/>
-        <TextBox x:Name="SearchEngine" VerticalAlignment="Bottom" Height="20" Margin="10,0,10,40"/>
-        <Button x:Name="SaveAndCloseButton" Content="Save &amp; Close" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="20" Width="90" Margin="0,0,10,10" Click="SaveAndCloseButtonOnClick"/>
-        <TextBox x:Name="HomePage" VerticalAlignment="Top" Margin="10,40,10,0" Height="20"/>
-
+        <StackPanel>
+            <Label Content="Home" HorizontalAlignment="Left"/>
+            <TextBox x:Name="HomeTextBox" Height="20" Margin="6,0,6,0"/>
+            <Label Content="Search" HorizontalAlignment="Left"/>
+            <TextBox x:Name="SearchTextBox" Height="20" Margin="6,0,6,0"/>
+            <Button x:Name="SaveButton" Content="Save" Height="20" HorizontalAlignment="Right" Width="40" Margin="0,6,6,0" Click="SaveButtonOnClick" VerticalAlignment="Bottom"/>
+        </StackPanel>
     </Grid>
 </Window>
