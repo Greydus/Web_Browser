@@ -21,12 +21,9 @@ namespace Web_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly SettingsWindow SettingsWindow;
 
         public MainWindow()
         {
-            SettingsWindow = new SettingsWindow();
-
             InitializeComponent();
         }
 
@@ -85,7 +82,8 @@ namespace Web_Browser
 
         private void SettingsButtonOnClick(object sender, RoutedEventArgs e)
         {
-            SettingsWindow.ShowDialog();
+            SettingsWindow settingsWindow = new SettingsWindow(this);
+            settingsWindow.ShowDialog();
         }
     }
 }
