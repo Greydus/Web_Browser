@@ -21,18 +21,15 @@ namespace Web_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly SettingsWindow SettingsWindow;
 
         public MainWindow()
         {
-            SettingsWindow = new SettingsWindow();
-
             InitializeComponent();
         }
 
         private void GoButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(UrlAddress.Text);
+            WebBrowser.Navigate(UrlTextBox.Text);
         }
 
         private void RefreshButtonOnClick(object sender, RoutedEventArgs e)
@@ -54,9 +51,9 @@ namespace Web_Browser
         {
             BackButton.IsEnabled = WebBrowser.CanGoBack;
             ForwardButton.IsEnabled = WebBrowser.CanGoForward;
-            UrlAddress.IsEnabled = true;
-            UrlAddress.Text = e.Uri.AbsoluteUri;
-            SearchQuery.IsEnabled = true;
+            UrlTextBox.IsEnabled = true;
+            UrlTextBox.Text = e.Uri.AbsoluteUri;
+            SearchTextBox.IsEnabled = true;
             GoButton.IsEnabled = true;
             SearchButton.IsEnabled = true;
             RefreshButton.IsEnabled = true;
@@ -69,15 +66,15 @@ namespace Web_Browser
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(Properties.Settings.Default.SearchEngine + HttpUtility.UrlEncode(SearchQuery.Text));
+            WebBrowser.Navigate(Properties.Settings.Default.SearchEngine + HttpUtility.UrlEncode(SearchTextBox.Text));
         }
 
         private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
         {
             BackButton.IsEnabled = false;
             ForwardButton.IsEnabled = false;
-            UrlAddress.IsEnabled = false;
-            SearchQuery.IsEnabled = false;
+            UrlTextBox.IsEnabled = false;
+            SearchTextBox.IsEnabled = false;
             GoButton.IsEnabled = false;
             SearchButton.IsEnabled = false;
             RefreshButton.IsEnabled = false;
@@ -85,7 +82,8 @@ namespace Web_Browser
 
         private void SettingsButtonOnClick(object sender, RoutedEventArgs e)
         {
-            SettingsWindow.ShowDialog();
+            SettingsWindow settingsWindow = new SettingsWindow(this);
+            settingsWindow.ShowDialog();
         }
     }
 }

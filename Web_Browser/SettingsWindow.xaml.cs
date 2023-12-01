@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,21 +20,23 @@ namespace Web_Browser
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public SettingsWindow()
+        public SettingsWindow(MainWindow mainWindow)
         {
+            Owner = mainWindow;
+
             InitializeComponent();
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            HomePage.Text = Properties.Settings.Default.HomePage;
-            SearchEngine.Text = Properties.Settings.Default.SearchEngine;
+            homePageTextBox.Text = Properties.Settings.Default.HomePage;
+            searchEngineTextBox.Text = Properties.Settings.Default.SearchEngine;
         }
 
         private void SaveAndCloseButtonOnClick(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.HomePage = HomePage.Text;
-            Properties.Settings.Default.SearchEngine = SearchEngine.Text;
+            Properties.Settings.Default.HomePage = homePageTextBox.Text;
+            Properties.Settings.Default.SearchEngine = searchEngineTextBox.Text;
             Properties.Settings.Default.Save();
             Close();
         }
