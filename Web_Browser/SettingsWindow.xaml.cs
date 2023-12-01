@@ -20,23 +20,25 @@ namespace Web_Browser
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public SettingsWindow()
+        public SettingsWindow(MainWindow mainWindow)
         {
+            Owner = mainWindow;
+
             InitializeComponent();
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            HomeTextBox.Text = Properties.Settings.Default.HomePage;
-            SearchTextBox.Text = Properties.Settings.Default.SearchEngine;
+            homePageTextBox.Text = Properties.Settings.Default.HomePage;
+            searchEngineTextBox.Text = Properties.Settings.Default.SearchEngine;
         }
 
-        private void SaveButtonOnClick(object sender, RoutedEventArgs e)
+        private void SaveAndCloseButtonOnClick(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.HomePage = HomeTextBox.Text;
-            Properties.Settings.Default.SearchEngine = SearchTextBox.Text;
+            Properties.Settings.Default.HomePage = homePageTextBox.Text;
+            Properties.Settings.Default.SearchEngine = searchEngineTextBox.Text;
             Properties.Settings.Default.Save();
-            Hide();
+            Close();
         }
     }
 }
