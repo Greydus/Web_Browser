@@ -21,36 +21,42 @@ namespace Web_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
+        WebBrowser webBrowser;
 
         public MainWindow()
         {
+            webBrowser = new WebBrowser();
+
+            webBrowser.Navigated += WebBrowser_Navigated;
+            webBrowser.Navigating += WebBrowser_Navigating;
+
             InitializeComponent();
         }
 
         private void GoButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(UrlTextBox.Text);
+            webBrowser.Navigate(UrlTextBox.Text);
         }
 
         private void RefreshButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Refresh();
+            webBrowser.Refresh();
         }
 
         private void BackButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.GoBack();
+            webBrowser.GoBack();
         }
 
         private void ForwardButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.GoForward();
+            webBrowser.GoForward();
         }
 
-        private void WebBrowserOnNavigated(object sender, NavigationEventArgs e)
+        private void WebBrowser_Navigated(object sender, NavigationEventArgs e)
         {
-            BackButton.IsEnabled = WebBrowser.CanGoBack;
-            ForwardButton.IsEnabled = WebBrowser.CanGoForward;
+            BackButton.IsEnabled = webBrowser.CanGoBack;
+            ForwardButton.IsEnabled = webBrowser.CanGoForward;
             UrlTextBox.IsEnabled = true;
             UrlTextBox.Text = e.Uri.AbsoluteUri;
             SearchTextBox.IsEnabled = true;
@@ -61,15 +67,16 @@ namespace Web_Browser
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(Properties.Settings.Default.HomePage);
+            tabControl.Items.Add(webBrowser);
+            webBrowser.Navigate(Properties.Settings.Default.HomePage);
         }
 
         private void SearchButtonOnClick(object sender, RoutedEventArgs e)
         {
-            WebBrowser.Navigate(Properties.Settings.Default.SearchEngine + HttpUtility.UrlEncode(SearchTextBox.Text));
+            webBrowser.Navigate(Properties.Settings.Default.SearchEngine + HttpUtility.UrlEncode(SearchTextBox.Text));
         }
 
-        private void WebBrowserOnNavigating(object sender, NavigatingCancelEventArgs e)
+        private void WebBrowser_Navigating(object sender, NavigatingCancelEventArgs e)
         {
             BackButton.IsEnabled = false;
             ForwardButton.IsEnabled = false;
@@ -84,6 +91,11 @@ namespace Web_Browser
         {
             SettingsWindow settingsWindow = new SettingsWindow(this);
             settingsWindow.ShowDialog();
+        }
+
+        private void AddTabButtonOnClick(object sender, RoutedEventArgs e)
+        {
+            tabControl.Items.Add(webBrowser);
         }
     }
 }

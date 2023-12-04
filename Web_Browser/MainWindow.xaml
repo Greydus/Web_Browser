@@ -11,7 +11,6 @@
             <RowDefinition Height="16*"/>
             <RowDefinition Height="270*"/>
         </Grid.RowDefinitions>
-        <WebBrowser x:Name="WebBrowser" Grid.Row="2" Navigated="WebBrowserOnNavigated" Navigating="WebBrowserOnNavigating" Grid.ColumnSpan="2"/>
         <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Height="20" Click="SettingsButtonOnClick" Margin="6,0,0,0"/>
         <DockPanel Grid.Row="1" Margin="4,0,4,0">
             <Button x:Name="BackButton" Content="&lt;&lt;" Width="40" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Click="BackButtonOnClick" Margin="0,0,4,0"/>
@@ -22,5 +21,7 @@
             <TextBox x:Name="SearchTextBox" DockPanel.Dock="Right" VerticalAlignment="Center" Height="20" Width="200" HorizontalAlignment="Right" Margin="4,0,0,0"/>
             <TextBox x:Name="UrlTextBox" VerticalAlignment="Center" Height="20"/>
         </DockPanel>
+        <TabControl x:Name="tabControl" Grid.Row="2" SelectedIndex="0"/>
+        <Button x:Name="addTabButton" Content="Add Tab" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="60" Margin="70,0,0,0" Click="AddTabButtonOnClick"/>
     </Grid>
 </Window>
