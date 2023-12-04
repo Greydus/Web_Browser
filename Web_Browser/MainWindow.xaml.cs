@@ -67,6 +67,8 @@ namespace Web_Browser
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            webBrowser = new WebBrowser();
+
             tabControl.Items.Add(webBrowser);
             webBrowser.Navigate(Properties.Settings.Default.HomePage);
         }
@@ -95,6 +97,8 @@ namespace Web_Browser
 
         private void AddTabButtonOnClick(object sender, RoutedEventArgs e)
         {
+            webBrowser = new WebBrowser();
+
             tabControl.Items.Add(webBrowser);
         }
     }
